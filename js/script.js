@@ -3,8 +3,18 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
+const toggleMenu = () => {
     navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", navLinks.classList.contains("active"));
+};
+
+menuToggle.addEventListener("click", toggleMenu);
+
+menuToggle.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleMenu();
+    }
 });
 
 // FECHAR MENU AO CLICAR NO LINK
@@ -14,6 +24,7 @@ const links = document.querySelectorAll(".nav-links a");
 links.forEach(link => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
     });
 });
 

@@ -222,6 +222,13 @@ ul {
     margin-bottom: 10px;
 }
 
+.service-card strong {
+    display: block;
+    margin-top: 18px;
+    color: var(--gold);
+    font-size: 1.15rem;
+}
+
 /* GALERIA */
 
 .gallery-grid {
@@ -310,6 +317,18 @@ ul {
 .contact-info i {
     color: var(--gold);
     margin-right: 8px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-buttons .btn {
+    min-width: 190px;
 }
 
 /* WHATSAPP */
@@ -468,6 +487,17 @@ ul {
 
     .contact-info{
         width:100%;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .contact-buttons .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
     }
 
     .whatsapp {
